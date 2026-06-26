@@ -1,4 +1,3 @@
-
 # Smart Boiler Thermal Simulation & Predictive Maintenance System
 
 ## Overview
@@ -11,67 +10,110 @@ The system integrates real climate data with engineered thermal features to simu
 
 ## Problem Statement
 
-Residential boilers often operate under varying environmental conditions that directly affect their efficiency and failure risk. However, most systems lack predictive intelligence.
+Residential boilers operate under varying environmental conditions that directly affect efficiency and failure risk. However, most systems lack predictive intelligence.
 
-This project addresses the following question:
+This project addresses the question:
 
-> Can we predict boiler stress and potential failure risk using only environmental temperature data and engineered thermal behavior models?
+Can boiler stress and potential failure risk be predicted using only environmental temperature data and engineered thermal behavior models?
 
 ---
 
 ## Data Source
 
-- Historical weather data is retrieved from the **Open-Meteo API**
-- Location: Kermanshah, Iran
-- Time range: October 2024 – March 2025
+- Historical weather data from Open-Meteo API  
+- Location: Kermanshah, Iran  
+- Time range: October 2024 – March 2025  
 - Features:
-  - Max Temperature (2m)
-  - Min Temperature (2m)
-  - Mean Temperature (2m)
+  - Maximum air temperature at 2 meters
+  - Minimum air temperature at 2 meters
+  - Mean air temperature at 2 meters
 
 ---
 
 ## Feature Engineering
 
-To simulate boiler behavior, the following engineered features were created:
-
 ### 1. Warm-up Time
 Estimated time required for the heating system to reach target temperature based on external conditions.
 
 ### 2. Radiator Water Temperature
-A physics-informed approximation of supply water temperature adjusted based on outdoor temperature.
+Physics-informed estimation of supply water temperature based on outdoor temperature.
 
 ### 3. Risk Label
-A rule-based classification system defining operational stress levels:
+Rule-based classification of operational stress:
 
-- **Low Risk**
-- **High Risk**
+- Low Risk
+- High Risk
 
 ---
 
 ## Methodology
 
-The system follows a step-by-step pipeline:
-
-1. Data collection from real-world weather API
-2. Data preprocessing and time-series formatting
-3. Thermal behavior simulation using engineered rules
-4. Feature creation (Warm-up Time, Radiator Temperature)
-5. Risk labeling based on thermal thresholds
-6. Exploratory data analysis and visualization
+1. Collect real-world weather data via API  
+2. Preprocess time-series dataset  
+3. Simulate thermal behavior of heating system  
+4. Engineer features (Warm-up Time, Radiator Temperature)  
+5. Define risk labels using threshold-based rules  
+6. Perform exploratory data analysis and visualization  
 
 ---
 
-## Technologies Used
+## Technologies
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Requests (API handling)
-- Jupyter Notebook
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Requests  
+- Jupyter Notebook  
 
 ---
 
 ## Project Structure
 
+Boiler-Thermal-Simulation/
+├── boiler_thermal_simulation.ipynb
+├── boiler_dataset.csv
+├── main.py
+└── README.md
+
+---
+
+## Key Insights
+
+- Heating demand is strongly dependent on outdoor temperature  
+- Warm-up time increases significantly in colder conditions  
+- Radiator supply temperature follows adaptive nonlinear behavior  
+- Rule-based thermal modeling can approximate system stress patterns  
+
+---
+
+## Future Work
+
+- Integration of real boiler sensor data (pressure, flow rate, gas consumption)  
+- Hybrid physics + machine learning modeling  
+- Predictive maintenance using Decision Tree, Random Forest, XGBoost  
+- Real-time monitoring dashboard  
+- Digital Twin architecture for HVAC systems  
+
+---
+
+## Research Potential
+
+This project can be extended into:
+
+- Predictive Maintenance Systems  
+- Smart HVAC Optimization  
+- Energy Efficiency Modeling  
+- Digital Twin Simulation Systems  
+
+---
+
+## Author
+
+Independent research project in applied machine learning and thermal system modeling.
+
+---
+
+## License
+
+Educational and research purposes only.
